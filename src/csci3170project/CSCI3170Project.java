@@ -39,7 +39,8 @@ class CSCI3170Project {
         Scanner scanner = new Scanner(System.in);
 
         // Initialize the system date and database records
-        String systemDate = "2000-00-00";
+        long millis = System.currentTimeMillis();
+        Date systemDate = new Date (millis);
         int books = 999;
         int customers = 999;
         int orders = 999;
@@ -133,6 +134,7 @@ class DatabaseInitialization {
                 // Read SQL query from txt files
                 try {
                     // read the SQL query from the file
+                    
                     BufferedReader br = new BufferedReader(new FileReader("query.txt"));
                     StringBuilder sb = new StringBuilder();
                     String line;
@@ -142,7 +144,12 @@ class DatabaseInitialization {
                     br.close();
                     
                     // get the connection to the database
-                    // Connection conn = getConnection();
+                    Connection conn = null;
+                    
+                    String dbURL = "jdbc:mysql://localhost:3306/book?autoReconnect=true&useSSL=false";
+                    String user = "root";
+                    String pass = "csci3170";
+                    conn = DriverManager.getConnection(dbURL, user, pass);
                     // create a prepared statement with the query
                     String query1 = sb.toString();
                     PreparedStatement ps = conn.prepareStatement(query1);
@@ -167,7 +174,6 @@ class DatabaseInitialization {
 
 // The class that handles the customer operation
 class CustomerOperation {
-
     // Define the method that performs the customer operation
     public void performCustomerOperation() {
         // Write your code here to perform the customer operation
