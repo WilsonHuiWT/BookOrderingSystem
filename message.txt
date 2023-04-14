@@ -1113,7 +1113,7 @@ class CSCI3170Project {
     }
 
     private static void InsertCSV(Connection conn) throws IOException, SQLException {
-        BufferedReader br = new BufferedReader(new FileReader("source.csv"));
+        BufferedReader br = new BufferedReader(new FileReader("sourse.csv"));
         
         List<String[]> records = new ArrayList<>();
         String line;
