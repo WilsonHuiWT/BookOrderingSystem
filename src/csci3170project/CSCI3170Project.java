@@ -2098,12 +2098,12 @@ class CSCI3170Project {
         while (rs.next()) {
             number2=number2+1;
             System.out.printf("| %-5s", number2);
-            for (int i = 1; i <= columnCount; i++) {
+            for (int i = 1; i <= columnCount2; i++) {
                 String columnValue = rs.getString(i);
                 if (columnValue != null) {
-                    System.out.printf("| %-" +(columnWidths[i - 1]+3) + "s", columnValue);
+                    System.out.printf("| %-" +(columnWidths2[i - 1]+3) + "s", columnValue);
                 } else {
-                    System.out.printf("| %-" + (columnWidths[i - 1]+3) + "s", "");
+                    System.out.printf("| %-" + (columnWidths2[i - 1]+3) + "s", "");
                 }
             }
             System.out.println("|");
@@ -2153,12 +2153,12 @@ class CSCI3170Project {
         while (rs.next()) {
             number3=number3+1;
             System.out.printf("| %-5s", number3);
-            for (int i = 1; i <= columnCount; i++) {
+            for (int i = 1; i <= columnCount3; i++) {
                 String columnValue = rs.getString(i);
                 if (columnValue != null) {
-                    System.out.printf("| %-" +(columnWidths[i - 1]+3) + "s", columnValue);
+                    System.out.printf("| %-" +(columnWidths3[i - 1]+3) + "s", columnValue);
                 } else {
-                    System.out.printf("| %-" + (columnWidths[i - 1]+3) + "s", "");
+                    System.out.printf("| %-" + (columnWidths3[i - 1]+3) + "s", "");
                 }
             }
             System.out.println("|");
